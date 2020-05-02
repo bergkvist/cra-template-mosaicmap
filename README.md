@@ -30,6 +30,11 @@ yarn start
 
 # Build (for production usage)
 yarn build
-```
 
-### Todo: Add Dockerfile to template for building a Docker image
+# The commands below requires that you have Docker installed:
+# Docker build (after build)
+yarn docker-build
+
+# Docker-run (after docker-build)
+yarn docker-run
+```
