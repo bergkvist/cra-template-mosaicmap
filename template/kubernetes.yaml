@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosaicmap
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - image: mosaicmap:v1.0.0
+          name: mosaicmap
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+    metadata:
+      labels:
+        app: mosaicmap
+  selector:
+    matchLabels:
+      app: mosaicmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mosaicmap
+spec:
+  ports:
+    - name: mosaicmap
+      port: 80
+      targetPort: 80
+  selector:
+    app: mosaicmap

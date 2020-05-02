@@ -1,0 +1,33 @@
+{
+  "name": "cra-template-mosaicmap",
+  "version": "1.0.0",
+  "description": "react-mosaic and deck.gl template for create-react-app",
+  "main": "template.json",
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "redux",
+    "reduxjs",
+    "react-redux",
+    "typescript",
+    "react-mosaic-component",
+    "blueprintjs",
+    "bergkvist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bergkvist/cra-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bergkvist/cra-template/issues"
+  }
+}

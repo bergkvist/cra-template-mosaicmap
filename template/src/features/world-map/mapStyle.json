@@ -1,0 +1,68 @@
+{
+  "version": 8,
+  "sources": {
+    "basemap": {
+      "type": "raster",
+      "tiles": [
+        "http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
+        "http://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png",
+        "http://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png"
+      ]
+    },
+    "composite": {
+      "type": "vector",
+      "tiles": [
+        "https://api.mapbox.com/v4/mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v8/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZG9zd2FsZCIsImEiOiJjaXdvd213aHgwMDBsMnlvZWY3amQ4YXR0In0.e9FmfCdPkY6I9DreofObwA"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "basemap",
+      "type": "raster",
+      "source": "basemap",
+      "minzoom": 0,
+      "maxzoom": 22
+    },
+    {
+      "id": "3d-buildings",
+      "source": "composite",
+      "source-layer": "building",
+      "filter": ["==", "extrude", "true"],
+      "type": "fill-extrusion",
+      "minzoom": 15,
+      "paint": {
+        "fill-extrusion-color": "#444",
+        "fill-extrusion-height": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          15,
+          0,
+          15.05,
+          ["get", "height"]
+        ],
+        "fill-extrusion-base": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          15,
+          0,
+          15.05,
+          ["get", "min_height"]
+        ],
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
+      "id": "hillshade",
+      "source": "composite",
+      "source-layer": "hillshade",
+      "type": "fill",
+      "paint": {
+        "fill-color": "rgba(40,40,40,0.2)",
+        "fill-outline-color": "rgba(80,80,80, 0.1)"
+      }
+    }
+  ]
+}
