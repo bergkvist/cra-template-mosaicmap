@@ -15,10 +15,8 @@
     "react",
     "create-react-app",
     "template",
-    "redux",
-    "reduxjs",
-    "react-redux",
     "typescript",
+    "react-context-toolkit",
     "react-mosaic-component",
     "blueprintjs",
     "bergkvist"
