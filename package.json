@@ -1,6 +1,6 @@
 {
   "name": "cra-template-mosaicmap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react-mosaic and deck.gl template for create-react-app",
   "main": "template.json",
   "license": "MIT",
